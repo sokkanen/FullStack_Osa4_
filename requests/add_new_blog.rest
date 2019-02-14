@@ -2,8 +2,8 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title":"Puheenjohtajan blogi",
-    "author":"Touko Aalto",
-    "url":"http://www.emmajaksa.fi",
+    "title":"Minä ja keihäs",
+    "author":"Seppo Räty",
+    "url":"http://www.saksaonpaskamaa.fi",
     "likes": 0
 }

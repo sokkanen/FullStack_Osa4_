@@ -5,7 +5,7 @@ const app = express()
 const blogRouter = require('./controllers/blogs')
 const mongoose = require('mongoose')
 
-mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true })
+mongoose.connect(config.mongoUrl, { useNewUrlParser: true })
 .then(()=> {
   console.log('Connected')
 })
