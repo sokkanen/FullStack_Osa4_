@@ -37,4 +37,26 @@ const mostBlogs = (blogs) => {
     return blogs.length === 0 ? 0 : max
 }
 
-module.exports = {dummy, totalLikes, favoriteBlog, mostBlogs}
+const mostLikes = (blogs) => {
+    const authors = blogs.map(blog => blog.author)
+    const likes = blogs.map(blog => blog.likes)
+    let numbers = lodash.countBy(authors)
+    for (entry in numbers){
+        numbers[entry] = 0;
+    }
+    for (i = 0; i<likes.length;i++){
+        const author = authors[i]
+        numbers[author] = numbers[author] + likes[i]
+    }
+    let max = { author: '', likes: 0}
+    for (entry in numbers){
+        if (numbers[entry] > max.likes){
+            max.likes = numbers[entry]
+            max.author = entry
+        }
+    }
+
+    return blogs.length === 0 ? 0 : max
+}
+
+module.exports = {dummy, totalLikes, favoriteBlog, mostBlogs, mostLikes}
