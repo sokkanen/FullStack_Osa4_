@@ -2,8 +2,8 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title":"Sienet ja minä",
-    "author":"Antti Hulkko",
-    "url":"http://www.hanoi_rocks.fi",
+    "title":"Puheenjohtajan blogi",
+    "author":"Touko Aalto",
+    "url":"http://www.emmajaksa.fi",
     "likes": 0
 }
