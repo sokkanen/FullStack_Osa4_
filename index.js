@@ -1,3 +1,4 @@
+const config = require('./utils/config')
 const http = require('http')
 const express = require('express')
 const app = express()
@@ -14,8 +15,14 @@ const blogSchema = mongoose.Schema({
 
 const Blog = mongoose.model('Blog', blogSchema)
 
-const mongoUrl = 'mongodb://fs_user:salasana1@ds135335.mlab.com:35335/fullstack_blogilista'
+const mongoUrl = config.MONGODB_URI
 mongoose.connect(mongoUrl, { useNewUrlParser: true })
+.then(result => {
+  console.log('Connected')
+})
+.catch((error) => {
+  console.log('Failed to connect: ', error.message)
+})
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -38,7 +45,7 @@ app.post('/api/blogs', (request, response) => {
     })
 })
 
-const PORT = 3003
+let PORT = config.PORT
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
