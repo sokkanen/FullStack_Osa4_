@@ -9,6 +9,16 @@ const listWithOneBlog = [
     }
   ]
 
+const listWithOneBlog2 = [
+    {
+      title: 'Pääministerin muisteloita',
+      author: 'Anneli Jäätteenmäki',
+      url: 'http://www.eijestas.fi',
+      likes: 22,
+      __v: 0
+    }
+  ]
+
 const blogs = [
     {
       _id: "5a422a851b54a676234d17f7",
@@ -60,4 +70,4 @@ const blogs = [
     }  
 ]
 
-module.exports = {blogs, listWithOneBlog}
+module.exports = {blogs, listWithOneBlog, listWithOneBlog2}
