@@ -24,7 +24,6 @@ const listWithOneBlog3 = [
       title: 'Miten maalata',
       author: 'Patrik Laine',
       url: 'http://www.farminsuuntaan.nhl',
-      likes: 666,
       __v: 0
     }
   ]
