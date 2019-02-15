@@ -32,4 +32,17 @@ blogRouter.delete('/:id', async (request, response, next) => {
   }
 })
 
+// Lisää likejen määrää yhdellä
+blogRouter.put('/:id', async (request, response, next) => {
+  try {
+    const id = request.params.id
+    blog = await Blog.findById(id)
+    let likes = blog.likes + 1
+    await Blog.findByIdAndUpdate(id, { likes: likes })
+    return response.status(201).end()
+  } catch (error) {
+    next(error)
+  }
+})
+
 module.exports = blogRouter
