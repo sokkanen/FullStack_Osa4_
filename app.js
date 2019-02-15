@@ -3,6 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const blogRouter = require('./controllers/blogs')
+const userRouter = require('./controllers/users')
 const mongoose = require('mongoose')
 
 mongoose.connect(config.mongoUrl, { useNewUrlParser: true })
@@ -16,5 +17,6 @@ mongoose.connect(config.mongoUrl, { useNewUrlParser: true })
 app.use(express.static('build'))
 app.use(bodyParser.json())
 app.use('/api/blogs', blogRouter)
+app.use('/api/users', userRouter)
 
 module.exports = app
