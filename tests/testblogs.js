@@ -19,6 +19,16 @@ const listWithOneBlog2 = [
     }
   ]
 
+const listWithOneBlog3 = [
+    {
+      title: 'Miten maalata',
+      author: 'Patrik Laine',
+      url: 'http://www.farminsuuntaan.nhl',
+      likes: 666,
+      __v: 0
+    }
+  ]
+
 const blogs = [
     {
       _id: "5a422a851b54a676234d17f7",
@@ -70,4 +80,4 @@ const blogs = [
     }  
 ]
 
-module.exports = {blogs, listWithOneBlog, listWithOneBlog2}
+module.exports = {blogs, listWithOneBlog, listWithOneBlog2, listWithOneBlog3}

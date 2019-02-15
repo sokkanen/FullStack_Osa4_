@@ -6,13 +6,14 @@ const Blog = require('../models/blog')
 
 const api = supertest(app)
 const oneBlog = new Blog(testblogs.listWithOneBlog2[0])
+const additionalBlog = new Blog(testblogs.listWithOneBlog3[0])
 
 beforeAll( async () => {
     jest.setTimeout(30000);
     await oneBlog.save()
 })
 
-describe('tests with one blog in db', () => {
+describe('tests with few blogs in db', () => {
 
 test('blogs are returned as json', async () => {
     jest.setTimeout(30000);
@@ -34,8 +35,17 @@ test('blog is identified by the field id', async () => {
     })
 })
 
+test('adding a blog to db works', async () => {
+    await additionalBlog.save()
+    const response = await api.get('/api/blogs')
+    expect(response.body.length).toBe(2)
+    const blog = response.body[1]
+    expect(blog.author).toEqual('Patrik Laine')
+    })
+
 afterAll(async () => {
     jest.setTimeout(30000);
     await oneBlog.remove()
+    await additionalBlog.remove()
     mongoose.connection.close()
 })
