@@ -1,6 +1,6 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGcCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphcGlrIiwiaWQiOiI1YzY4MTY2YmNkOWJhZTMwMGE1OWVlZmMiLCJpYXQiOjE1NTAzMjUzOTN9.lcHmnl6cJvwW53qyTy296sEIShgnvaArZmdOw-tNfBw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImphcGlrIiwiaWQiOiI1YzY4MTY2YmNkOWJhZTMwMGE1OWVlZmMiLCJpYXQiOjE1NTAzMjgyNTh9.h7Yyy7bSWcnceQaImoEMHTFqpTI_bpR7n_4bqxgj76U
 
 {
     "title":"eipitaisonnistuu",

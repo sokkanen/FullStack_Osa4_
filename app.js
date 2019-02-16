@@ -7,6 +7,14 @@ const userRouter = require('./controllers/users')
 const loginRouter = require('./controllers/login')
 const mongoose = require('mongoose')
 
+const tokenExtractor = (request, response, next) => {
+  const auth = request.get('authorization')
+  if (auth && auth.toLowerCase().startsWith('bearer')){
+    request.token = auth.substring(7)
+  }
+  next()
+}
+
 mongoose.connect(config.mongoUrl, { useNewUrlParser: true })
 .then(()=> {
   console.log('Connected')
@@ -17,6 +25,7 @@ mongoose.connect(config.mongoUrl, { useNewUrlParser: true })
 
 app.use(express.static('build'))
 app.use(bodyParser.json())
+app.use(tokenExtractor)
 app.use('/api/blogs', blogRouter)
 app.use('/api/users', userRouter)
 app.use('/api/login', loginRouter)
