@@ -2,8 +2,9 @@ POST http://localhost:3003/api/blogs
 Content-Type: application/json
 
 {
-    "title":"Minä ja keihäs",
-    "author":"Seppo Räty",
-    "url":"http://www.saksaonpaskamaa.fi",
-    "likes": 0
+    "title":"Peruspakin elämää",
+    "author":"Janne Niinimaa",
+    "url":"http://www.rapatessaroiskuu.fi",
+    "likes": 0,
+    "userId": "5c680a64259b09247b3b2bbc"
 }
